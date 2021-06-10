@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise gyakorlása 2</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="stylesheet/selectors.css">
+</head>
+
+<body>
+    <h2>Új post létrehozása</h2>
+    <p><small>Ha nincs kitöltve az 'id' mező, vagy még nincs olyan 'id'-jű post, akkor új postot hoz létre, ha már
+            van
+            olyan 'id'-jű post, akkor frissíti annak a tartalmát.</small></p>
+    <p>Adat: <input id="newTextPostInput" type="text" value="testing"></p>
+    <p> Az adat id-je: <input id="newTextIdInput" type="number" value="15">
+        <button id="newTextPostButton">Mehet</button>
+    </p>
+    <p>A beküldött adat id-je: <span id="sentNewTextId"></span></p>
+    <p>A beküldött adat: <span id="postedData"></span></p>
+    <hr>
+    <h2>Az első 10 post title mezője</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+            </tr>
+        </thead>
+        <tbody id="onlyTeen"></tbody>
+    </table>
+    <button id="refreshTeenButton">frissít</button>
+    <button id="previousTeenButton">előző tíz</button>
+    <button id="nextTeenButton">következő tíz</button>
+    <hr>
+    <h2>Post title mezőjének módosítása, post törlése</h2>
+    <p>A post id-je: <input id="postIdForModify" type="number" value="12"></p>
+    <p>A post új title-je legyen: <input id="titleForModify" type="text" value="testing"></p>
+    <p>Metódus:
+        <input type="radio" name="method" id="myPut" value="PUT">
+        <label for="post">PUT</label>
+        <input type="radio" name="method" id="myPatch" value="PATCH" checked>
+        <label for="post">PATCH</label>
+    </p>
+    <button id="titleModifyButton">Módosít</button>
+    <p>A post új title-je: <span id="modifiedTitle"></span></p>
+    <p>A post most: <span id="modifiedPost"></span></p>
+    <p>A művelet állapota: <span id="statusOfSending"></span></p>
+    <p><small>500-as hibakód: nincs olyan id-jű post, amit frissítene</small></p>
+    <p>Fenti id-jű poszt törlése:<button style="margin-left:20px" id="deletePostButton">Töröl</button></p>
+    <p>Művelet ereménye: <span id="deletePostSpan"></span></p>
+    <hr>
+    <h2>Hamburger készítése &#128526;</h2>
+    <p>Válasszon hozzá extrát!
+        <span><input class="extra" id="cheddar" value="cheddar" type="checkbox"><label for="cheddar">cheddar
+                sajt</label></span>
+        <br>
+        <span><input class="extra inner" id="ham" value="sonka" type="checkbox"><label
+                for="cheddar">sonka</label></span>
+        <br>
+        <span><input class="extra inner" id="cyanide" value="cián" type="checkbox"><label
+                for="cyanide">cián</label></span>
+    </p>
+    <div id="statusOfOrdering">
+        Állapot: <span id="making-status"></span>
+    </div>
+    <br>
+    <button id="makeHamburgerButton" onclick="makeHamburgerFunction()">Megendel</button>
+    <span style="margin-left:50px">Eltelt idő: 0 : <span id="passed">0</span></span>
+    <br><br>
+
+</body>
+
+</html>
